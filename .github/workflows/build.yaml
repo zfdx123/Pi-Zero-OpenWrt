@@ -82,12 +82,12 @@ jobs:
     - name: Install My Pkg
       run: cd openwrt && curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
-    - name: Add DTS And Drive
-      run: |
-        cd openwrt
-        mkdir -p target/linux/sunxi/files/arch/arm/boot/dts/allwinner/
-        cp -rf $GITHUB_WORKSPACE/dts/sun8i-h2-plus-orangepi-zero.dts target/linux/sunxi/files/arch/arm/boot/dts/allwinner/
-        cp -rf $GITHUB_WORKSPACE/package/xradio package/kernel/
+    # - name: Add DTS And Drive
+    #   run: |
+    #     cd openwrt
+    #     mkdir -p target/linux/sunxi/files/arch/arm/boot/dts/allwinner/
+    #     cp -rf $GITHUB_WORKSPACE/dts/sun8i-h2-plus-orangepi-zero.dts target/linux/sunxi/files/arch/arm/boot/dts/allwinner/
+    #     cp -rf $GITHUB_WORKSPACE/package/xradio package/kernel/
 
     - name: Load custom configuration
       run: |

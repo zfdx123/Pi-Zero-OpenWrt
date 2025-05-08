@@ -47,9 +47,11 @@ define Build/Compile
 		modules
 endef
 
+MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+
 define KernelPackage/xradio/install
 	$(INSTALL_DIR) $(1)/lib/firmware/xr819
-	$(TAR) -C $(1)/lib/firmware -xjf $(CURDIR)/firmware/xr819.tar.bz2
+	$(TAR) -C $(1)/lib/firmware -xjf $(MAKEFILE_DIR)/firmware/xr819.tar.bz2
 endef
 
 $(eval $(call KernelPackage,xradio))
