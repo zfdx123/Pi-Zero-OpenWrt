@@ -137,6 +137,10 @@
     };
 };
 
+&mmc1_pins_a {
+	bias-pull-up;
+};
+
 &ohci0 {
 	status = "okay";
 };
