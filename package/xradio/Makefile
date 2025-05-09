@@ -27,7 +27,7 @@ $(eval $(call Download,xr819))
 define KernelPackage/xradio
   SUBMENU:=Wireless Drivers xr819
   TITLE:=Xradio xr819 wifi-drivers support
-  DEPENDS:=@TARGET_sunxi +kmod-mac80211 +wpad-mini
+  DEPENDS:=@TARGET_sunxi +kmod-mac80211 +wpad-mesh-mbedtls
   KCONFIG:= \
 	CONFIG_WLAN_VENDOR_XRADIO=m \
 	CONFIG_XRADIO_USE_EXTENSIONS=y
