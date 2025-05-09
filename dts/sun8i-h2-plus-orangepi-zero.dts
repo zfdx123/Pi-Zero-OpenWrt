@@ -98,7 +98,7 @@
 
 &mmc1 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&mmc1_pins_a>;
+	pinctrl-0 = <&mmc1_pins>;
 	vmmc-supply = <&reg_vcc3v3>;
 	vqmmc-supply = <&vdd_wifi>;
 	mmc-pwrseq = <&pwrseq_wifi>;
@@ -137,7 +137,7 @@
     };
 };
 
-&mmc1_pins_a {
+&mmc1_pins {
 	bias-pull-up;
 };
 
