@@ -8,9 +8,9 @@ PKG_LICENSE_FILES:=
 
 PKG_SOURCE_URL:=https://github.com/zfdx123/xradio.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2024-12-06
-PKG_SOURCE_VERSION:=180aafb14191c78c1529d5a28ca58c7c9dcf2c55
-PKG_HASH:=c221b4cd4e275d99b5e30021f7a7d04a371696338094b2300fe397d0d2c46a5a
+PKG_SOURCE_DATE:=$(shell date -d @`git log -1 --format=%ct` +%Y-%m-%d)
+PKG_SOURCE_VERSION:=$(shell git ls-remote $(PKG_SOURCE_URL) HEAD | cut -f1)
+PKG_MIRROR_HASH:=skip
 
 PKG_BUILD_PARALLEL:=1
 
