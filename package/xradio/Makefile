@@ -17,6 +17,12 @@ PKG_BUILD_PARALLEL:=1
 include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/package.mk
 
+define Download/xr819
+  FILE:=xr819.tar.bz2
+  URL:=https://github.com/zfdx123/xr819/raw/master/
+  HASH:=bc9bae512267e04b6d00ffe18fe68a4181c9a5af35f765dfbabdeedd28c8f4f7
+endef
+$(eval $(call Download,xr819))
 
 define KernelPackage/xradio
   SUBMENU:=Wireless Drivers xr819
@@ -51,7 +57,7 @@ MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
 define KernelPackage/xradio/install
 	$(INSTALL_DIR) $(1)/lib/firmware/xr819
-	$(TAR) -C $(1)/lib/firmware -xjf $(MAKEFILE_DIR)/firmware/xr819.tar.bz2
+	$(TAR) -C $(1)/lib/firmware -xjf $(DL_DIR)/xr819.tar.bz2
 endef
 
 $(eval $(call KernelPackage,xradio))
