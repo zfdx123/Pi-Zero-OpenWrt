@@ -56,7 +56,7 @@ EOF
 chmod +x ./package/base-files/files/etc/uci-defaults/70-rootpt-resize
 chmod +x ./package/base-files/files/etc/uci-defaults/80-rootfs-resize
 
-cat <<"EOF" >>/etc/sysupgrade.conf
+cat <<"EOF" >> ./package/base-files/files/etc/sysupgrade.conf
 /etc/uci-defaults/70-rootpt-resize
 /etc/uci-defaults/80-rootfs-resize
 EOF
