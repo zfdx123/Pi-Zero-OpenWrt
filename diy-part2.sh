@@ -3,7 +3,7 @@
 # 依赖于 parted losetup resize2fs 自动扩容
 mkdir -p ./package/base-files/files/etc/uci-defaults || true
 
-cat <<"EOF" >/etc/uci-defaults/70-rootpt-resize
+cat <<"EOF" > ./package/base-files/files/etc/uci-defaults/70-rootpt-resize
 if [ ! -e /etc/rootpt-resize ] \
 && type parted > /dev/null \
 && lock -n /var/lock/root-resize
@@ -28,7 +28,7 @@ fi
 exit 1
 EOF
 
-cat <<"EOF" >/etc/uci-defaults/80-rootfs-resize
+cat <<"EOF" > ./package/base-files/files/etc/uci-defaults/80-rootfs-resize
 if [ ! -e /etc/rootfs-resize ] \
 && [ -e /etc/rootpt-resize ] \
 && type losetup > /dev/null \
