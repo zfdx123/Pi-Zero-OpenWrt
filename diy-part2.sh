@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # 依赖于 parted losetup resize2fs 自动扩容
+mkdir -p ./package/base-files/files/etc/uci-defaults || true
+
 cat <<"EOF" >/etc/uci-defaults/70-rootpt-resize
 if [ ! -e /etc/rootpt-resize ] \
 && type parted > /dev/null \
